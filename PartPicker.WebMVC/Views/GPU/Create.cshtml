@@ -1,10 +1,10 @@
 ﻿@model PartPicker.Models.GPUModels.GPUCreate
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create - GPUs";
 }
 
-<h2>Create</h2>
+<h2>Create GPU</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>GPUCreate</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
