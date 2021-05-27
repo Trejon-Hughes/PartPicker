@@ -63,42 +63,12 @@
     <Compile Include="Entities\RAM.cs" />
     <Compile Include="Entities\UserBuild.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202105191829582_FinishedMotherboard.cs" />
-    <Compile Include="Migrations\202105191829582_FinishedMotherboard.Designer.cs">
-      <DependentUpon>202105191829582_FinishedMotherboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105241944450_FinalDatabases.cs" />
-    <Compile Include="Migrations\202105241944450_FinalDatabases.Designer.cs">
-      <DependentUpon>202105241944450_FinalDatabases.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105251301068_UserBuilds.cs" />
-    <Compile Include="Migrations\202105251301068_UserBuilds.Designer.cs">
-      <DependentUpon>202105251301068_UserBuilds.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105271232201_Server.cs" />
-    <Compile Include="Migrations\202105271232201_Server.designer.cs">
-      <DependentUpon>202105271232201_Server.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105191829582_FinishedMotherboard.resx">
-      <DependentUpon>202105191829582_FinishedMotherboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105241944450_FinalDatabases.resx">
-      <DependentUpon>202105241944450_FinalDatabases.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105251301068_UserBuilds.resx">
-      <DependentUpon>202105251301068_UserBuilds.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105271232201_Server.resx">
-      <DependentUpon>202105271232201_Server.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
