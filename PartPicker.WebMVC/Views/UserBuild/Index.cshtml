@@ -1,0 +1,93 @@
+﻿@model PartPicker.Models.UserBuildModels.UserBuildDetail
+
+@{
+    ViewBag.Title = "Your Build";
+}
+
+<h2>Index</h2>
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+
+@if (Model.Motherboard.Socket != Model.CPU.SocketType)
+{
+    <div class="alert alert-danger fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        Possible CPU incompatability with Motherboard
+    </div>
+}
+
+<div>
+    <h4>Your Build</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Motherboard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Motherboard.Name)
+        </dd>
+
+        <dd>
+            @Html.ActionLink("Edit", "Motherboards") |
+            @Html.ActionLink("Details", "MotherboardDetails", new { id = Model.MotherboardID })
+        </dd>
+
+        <dd>---------------------------------------</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPU.Name)
+        </dd>
+
+        <dd>
+            @Html.ActionLink("Edit", "CPUs") |
+            @Html.ActionLink("Details", "CPUDetails", new { id = Model.CPUID })
+        </dd>
+
+        <dd>---------------------------------------</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPU.Name)
+        </dd>
+
+        <dd>
+            @Html.ActionLink("Edit", "GPUs") |
+            @Html.ActionLink("Details", "GPUDetails", new { id = Model.GPUID })
+        </dd>
+
+        <dd>---------------------------------------</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAM.Brand)
+            @Html.DisplayFor(model => model.RAM.RAMModel)
+        </dd>
+
+        <dd>
+            @Html.ActionLink("Edit", "RAM") |
+            @Html.ActionLink("Details", "RAMDetails", new { id = Model.RAMID })
+        </dd>
+
+    </dl>
+</div>

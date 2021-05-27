@@ -1,0 +1,230 @@
+﻿@model PartPicker.Models.GPUModels.GPUDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GPUDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GPUID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPUID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrandModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrandModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interface)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interface)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChipsetManufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChipsetManufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPUModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPUModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoreClock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoreClock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoostClock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoostClock)
+        </dd>
+
+        @if (Model.StreamProcessors != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.StreamProcessors)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StreamProcessors)
+            </dd>
+        }
+
+        @if (Model.CUDACores != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.CUDACores)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CUDACores)
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EffectiveMemory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EffectiveMemory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemorySize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemorySize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoryInterface)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoryInterface)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoryType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoryType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DirectX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DirectX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenGL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenGL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayPorts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayPorts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SlotWidth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlotWidth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PowerConnector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PowerConnector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumPower)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumPower)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cooler)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cooler)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VRReady)
+        </dt>
+
+        <dd>
+            @(Model.VRReady?"Yes":"No")
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<PartPicker.Models.CPUModels.CPUListItem>
+
+@{
+    ViewBag.Title = "CPUs";
+}
+
+<h2>CPUs</h2>
+
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SocketType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OperatingFrequency)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Name != "None")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SocketType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OperatingFrequency)
+                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CPUID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.CPUID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CPUID })
+                    </td>
+                }
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.CPUID })
+                    </td>
+                }
+            </tr>
+        }
+    }
+
+</table>

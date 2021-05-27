@@ -1,0 +1,172 @@
+﻿@model PartPicker.Models.MotherboardModels.MotherboardDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MotherboardDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherboardModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherboardModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherboardFormFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherboardFormFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Socket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Socket)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chipset)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chipset)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USBPorts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USBPorts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAMSlots)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAMSlots)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAMType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAMType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxMemorySpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxMemorySpeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxMemorySize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxMemorySize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoConnectors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoConnectors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PCIeSlots)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PCIeSlots)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SataPorts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SataPorts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M2NVMeSupport)
+        </dt>
+
+        <dd>
+            @(Model.M2NVMeSupport?"Yes":"No")
+        </dd>
+
+        @if (Model.M2NVMeSupport)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.M2NVMeSpecs)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.M2NVMeSpecs)
+            </dd>
+
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InbuiltWifi)
+        </dt>
+
+        <dd>
+            @(Model.InbuiltWifi?"Yes":"No")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RGBHeader)
+        </dt>
+
+        <dd>
+            @(Model.RGBHeader?"Yes":"No")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherFeatures)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherFeatures)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

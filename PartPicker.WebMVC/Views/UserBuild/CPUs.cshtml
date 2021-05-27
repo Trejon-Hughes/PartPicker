@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PartPicker.Models.CPUModels.CPUListItem>
+
+@{
+    ViewBag.Title = "CPUs";
+}
+
+<h2>CPUs</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SocketType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OperatingFrequency)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Brand != "None")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SocketType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OperatingFrequency)
+                </td>
+                <td>
+                    @Html.ActionLink("Select", "CPUs", new { id = item.CPUID }) |
+                    @Html.ActionLink("Details", "CPUDetails", new { id = item.CPUID })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+@Html.ActionLink("Back to your build", "Index")

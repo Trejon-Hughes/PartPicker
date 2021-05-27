@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PartPicker.Models.RAMModels.RAMListItem>
+
+@{
+    ViewBag.Title = "RAM";
+}
+
+<h2>RAM</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RAMModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Speed)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Brand != "None")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RAMModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Speed)
+                </td>
+                <td>
+                    @Html.ActionLink("Select", "RAM", new { id = item.RAMID }) |
+                    @Html.ActionLink("Details", "RAMDetails", new { id = item.RAMID })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+@Html.ActionLink("Back to your build", "Index")

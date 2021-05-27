@@ -1,0 +1,149 @@
+﻿@model PartPicker.Models.CPUModels.CPUDetail
+
+@{
+    ViewBag.Title = "Details - CPUs";
+}
+
+<h2>CPU Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPUModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPUModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SocketType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SocketType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoreName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoreName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfCores)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfCores)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfThreads)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfThreads)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperatingFrequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperatingFrequency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxTurboFrequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxTurboFrequency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L3Cache)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L3Cache)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManufacturingTech)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManufacturingTech)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemoryTypes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemoryTypes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IntergratedGraphics)
+        </dt>
+
+        <dd>
+            @(Model.IntergratedGraphics?"Yes":"No")
+        </dd>
+
+        @if (Model.IntergratedGraphics)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.IntergratedGraphicsSpec)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IntergratedGraphicsSpec)
+            </dd>
+
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PCIeRevision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PCIeRevision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThermalDesignPower)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThermalDesignPower)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Select", "Motherboards", new { id = Model.CPUID }) |
+    @Html.ActionLink("Back to previous page", null, null, null, new { href = Request.UrlReferrer })
+</p>

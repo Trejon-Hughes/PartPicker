@@ -1,0 +1,98 @@
+﻿@model PartPicker.Models.RAMModels.RAMDetail
+
+@{
+    ViewBag.Title = "Details - RAM";
+}
+
+<h2>RAM Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAMModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAMModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CASLatency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CASLatency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Timing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Timing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeatSpreader)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeatSpreader)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Features)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Features)
+        </dd>
+
+    </dl>
+</div>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.RAMID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+@if (!User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

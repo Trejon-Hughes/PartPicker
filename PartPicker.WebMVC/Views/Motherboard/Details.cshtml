@@ -1,0 +1,175 @@
+﻿@model PartPicker.Models.MotherboardModels.MotherboardDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MotherboardDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherboardModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherboardModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherboardFormFactor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherboardFormFactor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Socket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Socket)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chipset)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chipset)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USBPorts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USBPorts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAMSlots)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAMSlots)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAMType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAMType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxMemorySpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxMemorySpeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxMemorySize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxMemorySize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoConnectors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoConnectors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PCIeSlots)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PCIeSlots)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SataPorts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SataPorts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M2NVMeSupport)
+        </dt>
+
+        <dd>
+            @(Model.M2NVMeSupport?"Yes":"No")
+        </dd>
+
+        @if (Model.M2NVMeSupport)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.M2NVMeSpecs)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.M2NVMeSpecs)
+            </dd>
+
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InbuiltWifi)
+        </dt>
+
+        <dd>
+            @(Model.InbuiltWifi?"Yes":"No")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RGBHeader)
+        </dt>
+
+        <dd>
+            @(Model.RGBHeader?"Yes":"No")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherFeatures)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherFeatures)
+        </dd>
+
+    </dl>
+</div>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MotherboardID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+@if (!User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
